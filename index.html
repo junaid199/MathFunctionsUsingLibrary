@@ -6,17 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Functions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js" integrity="sha512-47N5yVdAeXJ+9qstVMTH2Z0EpX618sjYZcswRwhpldSTD0IbW6yQPtzg4RLrPp/2+TIgEF1elT68/ZBu82nqJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-    <form onsubmit="" id="input" type="text" return false>
-<input type="number" required placeholder="10"> <br>
+    <h1>Calculate Log</h1>
+    <form onsubmit="calcLog();return false"  type="text" >
+<input type="number" id="inp" required placeholder="10"> <br>
 <button type="submit">Calculate</button><br>
-    </form>
+    </form><br><br>
+    <div id="result"></div><br>
+
+    <h1>Calculate Square Root</h1>
+    <form onsubmit="calcSqrt();return false"  type="text" >
+        <input type="number" id="inpSqrt" required placeholder="10"> <br>
+        <button type="submit">Calculate</button><br>
+            </form><br><br>
+            <div id="resultSqrt"></div>
+
+            <h1>Calculate Square</h1>
+    <form onsubmit="calcSquare();return false"  type="text" >
+        <input type="number" id="inpSquare" required placeholder="10"> <br>
+        <button type="submit">Calculate</button><br>
+            </form><br><br>
+            <div id="resultSquare"></div>
+
 
     <script>
-        let doSubmit=()=>{}
+        let calcLog=()=>{
+        let input=+document.querySelector("#inp").value;
+        let result=math.log(input,2);
+        
+        document.querySelector("#result").innerHTML= result;
 
+        }
+
+        let calcSqrt=()=>{
+        let input=+document.querySelector("#inpSqrt").value;
+        let result= math.sqrt(input);
+        
+        document.querySelector("#resultSqrt").innerHTML= result;
+
+        }
+
+        let calcSquare=()=>{
+        let input=+document.querySelector("#inpSquare").value;
+        let result= math.square(input);
+        
+        document.querySelector("#resultSquare").innerHTML= result;
+
+        }
     </script>
 
 </body>
